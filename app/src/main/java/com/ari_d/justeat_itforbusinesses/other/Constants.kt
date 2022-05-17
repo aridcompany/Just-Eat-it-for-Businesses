@@ -1,0 +1,9 @@
+package com.ari_d.justeat_itforbusinesses.other
+
+object Constants {
+    const val MIN_PASSWORD_LENGTH = 6
+    const val SEARCH_TIME_DELAY = 500L
+    const val SEARCH_QUERY_SIZE = 1
+    const val PAGE_SIZE = 10
+    const val CHANGE_BOUNDS_DURATION = 300
+}

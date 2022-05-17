@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@id/main_profile_fragment">
+
+    <action
+        android:id="@+id/globalActionToMyWallet"
+        app:destination="@id/myWalletFragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"/>
+
+    <action
+        android:id="@+id/globalActionToEditAddressFragment2"
+        app:destination="@id/editAddressFragment2"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left" />
+
+    <action
+        android:id="@+id/globalActionToViewProfilePicture"
+        app:destination="@id/view_Profile_PicFragment" />
+
+    <action
+        android:id="@+id/globalActionToAddressBook"
+        app:destination="@id/addressBook_Fragment"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"/>
+    <fragment
+        android:id="@+id/myWalletFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.MyWalletFragment"
+        android:label="MyWalletFragment" >
+        <action
+            android:id="@+id/action_myWalletFragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_myWalletFragment_to_new_Wallet_Fragment"
+            app:destination="@id/new_Wallet_Fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/main_profile_fragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.main_profile_fragment"
+        android:label="main_profile_fragment">
+        <action
+            android:id="@+id/action_main_profile_fragment_to_updateDetailsFragment"
+            app:destination="@id/updateDetailsFragment" />
+        <action
+            android:id="@+id/action_main_profile_fragment_to_myWalletFragment"
+            app:destination="@id/myWalletFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_main_profile_fragment_to_addressBook_Fragment"
+            app:destination="@id/addressBook_Fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_main_profile_fragment_to_myOrdersFragment"
+            app:destination="@id/myOrdersFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_main_profile_fragment_to_trackMyOrdersFragment"
+            app:destination="@id/trackMyOrdersFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_main_profile_fragment_to_feedBackFragment"
+            app:destination="@id/feedBackFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/updateDetailsFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.UpdateDetailsFragment"
+        android:label="UpdateDetailsFragment">
+        <action
+            android:id="@+id/action_updateDetailsFragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment" />
+        <action
+            android:id="@+id/action_updateDetailsFragment_to_view_Profile_PicFragment"
+            app:destination="@id/view_Profile_PicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressBook_Fragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.AddressBook_Fragment"
+        android:label="AddressBook_Fragment" >
+        <action
+            android:id="@+id/action_addressBook_Fragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_addressBook_Fragment_to_editAddressFragment"
+            app:destination="@id/editAddressFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.EditAddressFragment"
+        android:label="EditAddressFragment">
+        <action
+            android:id="@+id/action_editAddressFragment_to_addressBook_Fragment"
+            app:destination="@id/addressBook_Fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/editAddressFragment2"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.EditAddressFragment2"
+        android:label="EditAddressFragment2">
+        <argument
+            android:name="street_address"
+            app:argType="string" />
+        <argument
+            android:name="apt_suite"
+            app:argType="string" />
+        <argument
+            android:name="address_city"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_editAddressFragment22_to_editAddressFragment"
+            app:destination="@id/editAddressFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/myOrdersFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.MyOrdersFragment"
+        android:label="MyOrdersFragment" >
+        <action
+            android:id="@+id/action_myOrdersFragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/trackMyOrdersFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.TrackMyOrdersFragment"
+        android:label="TrackMyOrdersFragment" >
+        <action
+            android:id="@+id/action_trackMyOrdersFragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/feedBackFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.FeedBackFragment"
+        android:label="FeedBackFragment" >
+        <action
+            android:id="@+id/action_feedBackFragment_to_main_profile_fragment"
+            app:destination="@id/main_profile_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/view_Profile_PicFragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.View_Profile_PicFragment"
+        android:label="View_Profile_PicFragment">
+        <argument
+            android:name="user_name"
+            app:argType="string" />
+        <argument
+            android:name="profile_pic"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_view_Profile_PicFragment_to_updateDetailsFragment"
+            app:destination="@id/updateDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/new_Wallet_Fragment"
+        android:name="com.ari_d.justeatit.ui.Profile.fragments.New_Wallet_Fragment"
+        android:label="New_Wallet_Fragment" />
+
+</navigation>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="customTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="curved_images" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+        <item name="color">@color/off_white</item>
+    </style>
+
+    <style name="curved_images_for_cart" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="color">@color/off_white</item>
+    </style>
+
+    <style name="_curved_images" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="color">@color/off_white</item>
+    </style>
+
+    <style name="my_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/accent</item>
+    </style>
+
+    <style name="my_button4" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
+    <style name="share_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">16dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primary_dark</item>
+    </style>
+
+    <style name="my_button5" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/secondary_text</item>
+    </style>
+
+    <style name="shimmer_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/shimmerColor</item>
+    </style>
+
+    <style name="back_arrow" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">4dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="my_button2" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="my_button3" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primary_dark</item>
+    </style>
+
+    <style name="transfer_button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="background">@null</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
+
+    <style name="RatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorControlNormal">@color/primary_light</item>
+        <item name="colorControlActivated">@color/primary_dark</item>
+    </style>
+
+    <style name="Widget.splashScreenTheme.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.splashScreenTheme.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="NoBackgroundDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+    </style>
+</resources>
