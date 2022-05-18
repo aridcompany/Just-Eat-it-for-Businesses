@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Just Eat it</string>
+    <string name="app_name">Just Eat-it for Businesses</string>
     <string name="title_home">Home</string>
     <string name="title_discover">Discover</string>
     <string name="title_favorites">Favorites</string>
@@ -155,4 +155,6 @@
     <string name="title_pending">Pending</string>
     <string name="title_order_id">Order  ID -  #</string>
     <string name="title_clear_cart">Clear shopping bag</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

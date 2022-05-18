@@ -13,15 +13,10 @@ import com.ari_d.justeat_itforbusinesses.Extensions.snackbar
 import com.ari_d.justeat_itforbusinesses.other.EventObserver
 import com.ari_d.justeat_itforbusinesses.ui.Auth.ViewModels.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_resetpassword.*
-import kotlinx.android.synthetic.main.fragment_resetpassword.TextInputEditText_email
-import kotlinx.android.synthetic.main.fragment_resetpassword.btn_back
-import kotlinx.android.synthetic.main.fragment_resetpassword.progressBar
-import kotlinx.android.synthetic.main.fragment_resetpassword.textView
-import kotlinx.android.synthetic.main.fragment_resetpassword.textView2
+import kotlinx.android.synthetic.main.fragment_reset_password.*
 
 @AndroidEntryPoint
-class ResetPasswordFragment : Fragment(R.layout.fragment_resetpassword) {
+class ResetPasswordFragment : Fragment(R.layout.fragment_reset_password) {
 
     val viewModel: AuthViewModel by viewModels()
 
@@ -70,7 +65,7 @@ class ResetPasswordFragment : Fragment(R.layout.fragment_resetpassword) {
             alertDialog(
                 getString(R.string.email_sent),
                 getString(R.string.email_sent_msg),
-                requireActivity().resources.getDrawable(R.drawable.ic_baseline_mark_email_read_24)
+                requireActivity().resources.getDrawable(R.drawable.ic_mark_email_read)
             )
         })
     }

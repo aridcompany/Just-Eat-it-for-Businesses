@@ -17,7 +17,7 @@ class Auth_Activity : AppCompatActivity() {
     val user = authUser.currentUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.Theme_justeat_itforbusinesses_NoActionBar)
+        setTheme(R.style.Theme_JustEatItForBusinesses_NoActionBar)
         setContentView(R.layout.activity_auth)
         if (user != null) {
             Intent(this, MainActivity::class.java).also {

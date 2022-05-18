@@ -19,7 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-#-keep class androidx.appcompat.widget.**{ *; }
+-keep class androidx.appcompat.widget.**{ *; }
 #-keep class com.ari_d.justeatit.data.entities.Account_Items { *; }
 #-keep class com.ari_d.justeatit.data.entities.Address { *; }
 #-keep class com.ari_d.justeatit.data.entities.Comment { *; }
@@ -29,7 +29,7 @@
 #-keep class com.ari_d.justeatit.data.entities.Orders { *; }
 #-keep class com.ari_d.justeatit.data.entities.Product { *; }
 #-keep class com.ari_d.justeatit.data.entities.SupportedLocations { *; }
-#-keep class com.ari_d.justeatit.data.entities.User { *; }
+-keep class com.ari_d.justeat_itforbusinesses.data.entities.User { *; }
 #-keep class com.ari_d.justeatit.data.entities.Wallet { *; }
 -keepattributes *Annotation*
 -keepattributes Exceptions

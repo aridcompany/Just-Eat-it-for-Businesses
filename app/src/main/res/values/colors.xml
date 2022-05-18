@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="green">#28B828</color>
+  <color name="primaryColor">#546e7a</color>
+  <color name="primaryLightColor">#819ca9</color>
+  <color name="primaryDarkColor">#29434e</color>
+  <color name="secondaryColor">#0d47a1</color>
+  <color name="secondaryLightColor">#5472d3</color>
+  <color name="secondaryDarkColor">#002171</color>
+  <color name="primaryTextColor">#ffffff</color>
+  <color name="secondaryTextColor">#ffffff</color>
 
-    <color name="primary">#795548</color>
-    <color name="primary_dark">#5D4037</color>
-    <color name="primary_light">#5D4037</color>
-    <color name="accent">#FF9800</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
-    <color name="icons">#FFFFFF</color>
-    <color name="divider">#BDBDBD</color>
-    <color name="off_white">#FAF9F6</color>
-    <color name="ooooo">#000000</color>
-    <color name="off_white_inverse">#323130</color>
-    <color name="off_white2">#323130</color>
-    <color name="shimmerColor">#C2C2C2</color>
-    <color name="grey">#808080</color>
-    <color name="transparent">#ebecf0</color>
-    <color name="black_overlay">#66000000</color>
-    <color name="red">#FDA31E</color>
+  <color name="off_white">#ECEDE9</color>
+  <color name="red">#FF0000</color>
+  <color name="accent">#FF9800</color>
 </resources>
