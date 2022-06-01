@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Main.notifications.NotificationsFragment">
+    tools:context=".ui.Main.confirmed_orders.ConfirmedOrdersFragment">
 
     <TextView
         android:id="@+id/text_notifications"

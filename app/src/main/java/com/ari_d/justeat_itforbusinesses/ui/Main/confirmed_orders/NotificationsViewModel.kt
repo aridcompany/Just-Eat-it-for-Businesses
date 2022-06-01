@@ -1,4 +1,4 @@
-package com.ari_d.justeat_itforbusinesses.ui.Main.notifications
+package com.ari_d.justeat_itforbusinesses.ui.Main.confirmed_orders
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

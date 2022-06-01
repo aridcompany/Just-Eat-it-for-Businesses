@@ -5,6 +5,14 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <action
+        android:id="@+id/globalActionToCreateProductsFragment"
+        app:destination="@+id/navigation_create_products"
+        app:enterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/fade_out"/>
+
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.ari_d.justeat_itforbusinesses.ui.Main.home.HomeFragment"
@@ -12,14 +20,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_orders"
+        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.orders.OrdersFragment"
+        android:label="@string/title_orders"
+        tools:layout="@layout/fragment_orders" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_confirmed_orders"
+        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.confirmed_orders.ConfirmedOrdersFragment"
+        android:label="@string/title_confirmed_orders"
+        tools:layout="@layout/fragment_confirmed_orders" />
+
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.products.Products"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragments_products" />
+
+    <fragment
+        android:id="@+id/navigation_create_products"
+        android:name="com.ari_d.justeat_itforbusinesses.ui.Main.products.CreateProducts"
+        android:label="@string/title_create_products"
+        tools:layout="@layout/fragment_create_products" />
 </navigation>

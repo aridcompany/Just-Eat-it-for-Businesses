@@ -1,4 +1,4 @@
-package com.ari_d.justeat_itforbusinesses.ui.Main.dashboard
+package com.ari_d.justeat_itforbusinesses.ui.Main.orders
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.ari_d.justeat_itforbusinesses.ui.Main.dashboard
+package com.ari_d.justeat_itforbusinesses.ui.Main.products
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.ari_d.justeat_itforbusinesses.databinding.FragmentDashboardBinding
+import com.ari_d.justeat_itforbusinesses.databinding.FragmentsProductsBinding
+import com.ari_d.justeat_itforbusinesses.ui.Main.orders.DashboardViewModel
 
-class DashboardFragment : Fragment() {
+class Products: Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentsProductsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +26,7 @@ class DashboardFragment : Fragment() {
         val dashboardViewModel =
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentsProductsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard

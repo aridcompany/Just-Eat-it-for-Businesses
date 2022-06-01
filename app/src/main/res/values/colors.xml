@@ -4,12 +4,16 @@
   <color name="primaryLightColor">#819ca9</color>
   <color name="primaryDarkColor">#29434e</color>
   <color name="secondaryColor">#0d47a1</color>
+  <color name="secondaryColorVariant">#02648E</color>
   <color name="secondaryLightColor">#5472d3</color>
   <color name="secondaryDarkColor">#002171</color>
   <color name="primaryTextColor">#ffffff</color>
   <color name="secondaryTextColor">#ffffff</color>
 
-  <color name="off_white">#ECEDE9</color>
+  <color name="off_white">#FCFBFB</color>
   <color name="red">#FF0000</color>
+  <color name="green">#42A342</color>
   <color name="accent">#FF9800</color>
+  <color name="white">#FFFFFF</color>
+  <color name="black">#000000</color>
 </resources>

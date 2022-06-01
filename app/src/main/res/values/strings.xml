@@ -157,4 +157,23 @@
     <string name="title_clear_cart">Clear shopping bag</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_confirmed_orders">Confirmed Orders</string>
+    <string name="title_products">Products</string>
+    <string name="title_create_products">Create Products</string>
+    <string name="title_scrollview">Scrollview</string>
+    <string name="title_options">Options</string>
+    <string name="title_ambergris">Ambergris</string>
+    <string name="title_24_products">24 products on store</string>
+    <string name="title_interactions"><u>Interactions</u></string>
+    <string name="title_product_likes">Products\' likes:</string>
+    <string name="title_product_comments">Products\' comments:</string>
+    <string name="title_product_unconfirmed">Unconfirmed revenue:</string>
+    <string name="title_324_500">₦ 324, 500</string>
+    <string name="title_product_likes_no">67</string>
+    <string name="title_product_comments_no">12</string>
+    <string name="title_unconfirmed_orders">16 unconfirmed orders</string>
+    <string name="title_confirmed_orders_no">79 confirmed orders</string>
+    <string name="title_product_confirmed">Confirmed revenue:</string>
+    <string name="title_124_600">₦ 124, 600</string>
 </resources>
