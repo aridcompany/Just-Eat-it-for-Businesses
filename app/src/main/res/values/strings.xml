@@ -176,4 +176,7 @@
     <string name="title_confirmed_orders_no">79 confirmed orders</string>
     <string name="title_product_confirmed">Confirmed revenue:</string>
     <string name="title_124_600">₦ 124, 600</string>
+    <string name="title_analytics"><u>Analytics</u></string>
+    <string name="title_highest_sales_day">Highest sales day: Sunday</string>
+    <string name="title_lowest_sales_day">Lowest sales day: Monday</string>
 </resources>

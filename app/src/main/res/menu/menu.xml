@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home_fill0_wght500_grad0_opsz48"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_orders"
+        android:icon="@drawable/rocket_launch_fill0_wght500_grad0_opsz48"
+        android:title="@string/title_orders" />
+
+    <item
+        android:id="@+id/navigation_orders_"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_confirmed_orders"
+        android:icon="@drawable/local_shipping_fill0_wght500_grad0_opsz48__1_"
+        android:title="@string/title_confirmed_orders" />
+
+    <item
+        android:id="@+id/navigation_products"
+        android:icon="@drawable/category_fill0_wght500_grad0_opsz48"
+        android:title="@string/title_dashboard" />
+</menu>
