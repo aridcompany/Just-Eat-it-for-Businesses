@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/curved_layout"
+        android:clipToOutline="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/order_image"
+            android:layout_width="119dp"
+            android:layout_height="119dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/figma_image_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraint"
+            app:shapeAppearanceOverlay="@style/curved_images" />
+
+        <TextView
+            android:id="@+id/order_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/title_hamburger"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/order_image"
+            app:layout_constraintTop_toTopOf="@+id/order_image" />
+
+        <TextView
+            android:id="@+id/order_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/title_X3"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="@+id/order_image" />
+
+        <TextView
+            android:id="@+id/order_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/alegreya"
+            android:text="@string/title_240000"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/order_image"
+            app:layout_constraintTop_toBottomOf="@+id/order_name" />
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/title_OrderID5930323f_af4"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/order_image"
+            app:layout_constraintTop_toBottomOf="@+id/order_price" />
+
+        <TextView
+            android:id="@+id/order_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/title_Orderedby"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/order_image"
+            app:layout_constraintTop_toBottomOf="@+id/order_id" />
+
+        <TextView
+            android:id="@+id/order_consumer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/lato"
+            android:text="@string/title_Jonathan_Casey"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/order_by"
+            app:layout_constraintTop_toBottomOf="@+id/order_id" />
+
+        <ImageView
+            android:id="@+id/confirm"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="56dp"
+            android:contentDescription="@string/title_confirm_order"
+            android:src="@drawable/done_fill1_wght600_grad0_opsz48"
+            app:layout_constraintStart_toEndOf="@+id/order_image"
+            app:layout_constraintTop_toBottomOf="@id/order_by" />
+
+        <ImageView
+            android:id="@+id/revert"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="53dp"
+            android:contentDescription="@string/title_revert"
+            android:src="@drawable/undo_fill1_wght600_grad0_opsz48"
+            app:layout_constraintStart_toEndOf="@+id/confirm"
+            app:layout_constraintTop_toBottomOf="@id/order_by" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

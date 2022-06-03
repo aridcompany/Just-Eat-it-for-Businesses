@@ -61,17 +61,6 @@
                     app:layout_constraintLeft_toLeftOf="@+id/title_layout"
                     app:layout_constraintTop_toTopOf="@+id/title_layout" />
 
-                <ImageView
-                    android:id="@+id/more_options"
-                    android:layout_width="27dp"
-                    android:layout_height="27dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="8dp"
-                    android:contentDescription="@string/title_options"
-                    android:src="@drawable/more_vert_fill1_wght700_grad0_opsz48"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/title_layout" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView

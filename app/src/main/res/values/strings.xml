@@ -88,7 +88,7 @@
     <string name="title_deleted">Deleted!</string>
     <string name="title_empty_address">Your haven\'t saved any credit/debit cards!</string>
     <string name="title_about">About</string>
-    <string name="title_feedback">Feedback</string>
+    <string name="title_feedback">Feedbacks</string>
     <string name="title_help">Help</string>
     <string name="title_just_eat_it">"Just Eat it from Ari_D: Copyright © 2022. All Rights Reserved."</string>
     <string name="title_hi">Hi I\'m …</string>
@@ -179,4 +179,16 @@
     <string name="title_analytics"><u>Analytics</u></string>
     <string name="title_highest_sales_day">Highest sales day: Sunday</string>
     <string name="title_lowest_sales_day">Lowest sales day: Monday</string>
+    <string name="title_orders_amount">₦ 14, 900</string>
+    <string name="title_users">Users</string>
+    <string name="title_addresses">Addresses</string>
+    <string name="title_hamburger">Hamburger</string>
+    <string name="title_X3">X3</string>
+    <string name="title_240000">₦ 2400.00</string>
+    <string name="title_OrderID5930323f_af4">Order ID - #5930323f-af4</string>
+    <string name="title_Orderedby">Ordered by -</string>
+    <string name="title_Jonathan_Casey">Jonathan Casey</string>
+    <string name="title_confirm_order">Confirm order</string>
+    <string name="title_revert">Revert order</string>
+    <string name="title_OrderedOn">Ordered on - 13/4/2022 12:02:14</string>
 </resources>

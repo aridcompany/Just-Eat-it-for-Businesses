@@ -7,7 +7,7 @@
 
     <style name="curved_images" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">6dp</item>
+        <item name="cornerSize">8dp</item>
         <item name="color">@color/off_white</item>
     </style>
 

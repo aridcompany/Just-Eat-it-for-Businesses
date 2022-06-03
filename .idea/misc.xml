@@ -8,10 +8,17 @@
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/bottom_navigation_seletor.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/category_fill0_wght500_grad0_opsz48.xml" value="0.167" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/contact_mail_fill0_wght600_grad0_opsz48.xml" value="0.1855" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/curved_layout.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/done_fill1_wght600_grad0_opsz48.xml" value="0.167" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/forum_fill0_wght600_grad0_opsz48.xml" value="0.1855" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/home_fill0_wght500_grad0_opsz48.xml" value="0.167" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.1945" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_bag.xml" value="0.1945" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1945" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1945" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_baseline_favorite_border_25.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_baseline_mark_email_read_24.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/ic_email.xml" value="0.1945" />
@@ -25,6 +32,8 @@
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/just_eat_it_logo.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/local_shipping_fill0_wght500_grad0_opsz48__1_.xml" value="0.12" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/more_vert_fill1_wght700_grad0_opsz48.xml" value="0.167" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/more_vert_fill1_wght700_grad0_opsz48_white.xml" value="0.1945" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/orders_img.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/rocket_launch_fill0_wght500_grad0_opsz48.xml" value="0.167" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/round_button.xml" value="0.1945" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/drawable/splash_image.xml" value="0.1945" />
@@ -33,6 +42,9 @@
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/font/alex_brush.xml" value="0.2546875" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/activity_auth.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/confirmed_orders_fragment.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/confirmed_orders_layout.xml" value="0.22" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_confirmed_orders.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_create_products.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_dashboard.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_home.xml" value="0.25" />
@@ -42,6 +54,8 @@
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_register.xml" value="0.22" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragment_reset_password.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/fragments_products.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/orders_layout.xml" value="0.25" />
+        <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/layout/product_layout.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/menu/menu.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/abugewa graham/AndroidStudioProjects/JustEatitforBusinesses/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1945" />

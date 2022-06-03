@@ -4,7 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Main.orders.OrdersFragment">
+    tools:context=".ui.Main.orders.OrdersFragment"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/srcollview"
+        android:contentDescription="@string/title_scrollview">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relative_layout"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_orders_background"
+                    android:src="@drawable/orders_img"
+                    app:srcCompat="@drawable/orders_img"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/title_orders"
+                    app:layout_constraintDimensionRatio="207:107"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_orders"
+                    android:text="@string/title_orders"
+                    android:textSize="23sp"
+                    android:layout_marginTop="68dp"
+                    android:layout_marginLeft="37dp"
+                    android:fontFamily="@font/montserrat_alternates"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_orders_amount"
+                    android:textSize="23sp"
+                    android:fontFamily="@font/alegreya"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txt_orders"
+                    android:layout_marginLeft="37dp"
+                    android:text="@string/title_orders_amount"
+                    android:textColor="@color/white"/>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="800dp"
+                android:id="@+id/orders_recyclerView"
+                android:background="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/text_dashboard"
@@ -17,6 +81,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

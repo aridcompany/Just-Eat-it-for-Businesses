@@ -1,6 +1,8 @@
 package com.ari_d.justeat_itforbusinesses
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -38,5 +40,19 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         binding.bottomNavigationBar.background = null
         binding.bottomNavigationBar.menu.getItem(2).isEnabled = false
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.navigation_addresses -> {}
+            R.id.navigation_feedbacks -> {}
+            R.id.navigation_users -> {}
+        }
+        return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 }
