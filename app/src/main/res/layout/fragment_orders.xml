@@ -40,9 +40,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/txt_orders"
-                    android:text="@string/title_orders"
+                    android:text="@string/title_total_revenue"
                     android:textSize="23sp"
-                    android:layout_marginTop="68dp"
+                    android:layout_marginTop="58dp"
                     android:layout_marginLeft="37dp"
                     android:fontFamily="@font/montserrat_alternates"
                     android:textColor="@color/white"/>

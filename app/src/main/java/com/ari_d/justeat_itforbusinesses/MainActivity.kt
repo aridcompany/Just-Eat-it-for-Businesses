@@ -1,5 +1,6 @@
 package com.ari_d.justeat_itforbusinesses
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -10,7 +11,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ari_d.justeat_itforbusinesses.databinding.ActivityMainBinding
+import com.ari_d.justeat_itforbusinesses.ui.Main.products.CreateProductsActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -40,6 +44,11 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         binding.bottomNavigationBar.background = null
         binding.bottomNavigationBar.menu.getItem(2).isEnabled = false
+        binding.btnCreateProducts.setOnClickListener {
+            Intent(this, CreateProductsActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

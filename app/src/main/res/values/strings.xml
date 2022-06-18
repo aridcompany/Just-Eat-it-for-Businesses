@@ -191,4 +191,18 @@
     <string name="title_confirm_order">Confirm order</string>
     <string name="title_revert">Revert order</string>
     <string name="title_OrderedOn">Ordered on - 13/4/2022 12:02:14</string>
+    <string name="title_new_product"><u>New Product</u></string>
+    <string name="title_description_images"><u>Description images</u></string>
+    <string name="title_product_name">Product Name</string>
+    <string name="title_product_price">Product Price</string>
+    <string name="title_product_description">Product Description</string>
+    <string name="title_product_stock_">Product Stock</string>
+    <string name="title_product_contact_no">Product Contact no</string>
+    <string name="title_product_fee">Product Shipping fee</string>
+    <string name="title_available">Available</string>
+    <string name="title_product_details"><u>Product Details</u></string>
+    <string name="title_total_revenue">Total Revenue</string>
+    <string name="title_fill_out_all_fields">Please fill out all fields.</string>
+    <string name="title_please_select_some_product_images">Please select a default product image!</string>
+    <string name="title_unavailable_">Unavailable</string>
 </resources>

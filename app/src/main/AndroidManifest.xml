@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ari_d.justeat_itforbusinesses">
+    package="com.ari_d.justeat_itforbusinesses" >
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -13,48 +14,52 @@
 
     <queries>
         <intent>
-            <action android:name="android.intent.action.VIEW"/>
-            <data android:scheme="http"/>
-        </intent>
+            <action android:name="android.intent.action.VIEW" />
 
+            <data android:scheme="http" />
+        </intent>
         <intent>
-            <action android:name="android.intent.action.SENDTO"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <data android:scheme="mailto"/>
+            <action android:name="android.intent.action.SENDTO" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+
+            <data android:scheme="mailto" />
         </intent>
     </queries>
 
     <application
+        android:name=".JustEatitForBusinesses"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name=".JustEatitForBusinesses"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/splashScreenTheme">
+        android:theme="@style/splashScreenTheme" >
+        <activity
+            android:name=".ui.Main.products.CreateProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"/>
-
+            android:label="@string/app_name" />
         <activity
             android:name=".ui.Auth.Auth_Activity"
             android:exported="true"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true" />

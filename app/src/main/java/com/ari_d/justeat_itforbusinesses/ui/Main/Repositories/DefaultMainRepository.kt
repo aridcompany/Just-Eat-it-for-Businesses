@@ -1,0 +1,72 @@
+package com.ari_d.justeat_itforbusinesses.ui.Main.Repositories
+
+import android.net.Uri
+import com.ari_d.justeat_itforbusinesses.data.entities.Product
+import com.ari_d.justeat_itforbusinesses.other.Resource
+import com.ari_d.justeat_itforbusinesses.other.safeCall
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
+
+class DefaultMainRepository: MainRepository {
+
+    private val auth = FirebaseAuth.getInstance()
+    private val currentUser = auth.currentUser
+    private val users = Firebase.firestore.collection("users")
+    private val sellers = Firebase.firestore.collection("sellers")
+    private val storageRef = Firebase.storage.reference
+    private val products = Firebase.firestore.collection("products")
+    private val sellersProducts = Firebase.firestore.collection("sellers")
+        .document(currentUser!!.uid)
+        .collection("products")
+
+    override suspend fun createProduct(product: Product) = withContext(Dispatchers.IO) {
+        safeCall {
+            products.add(product).await()
+            sellersProducts.add(product)
+            Resource.Success(product)
+        }
+    }
+
+    override suspend fun uploadProductPictures(
+        mainImg: Uri,
+        uri1: Uri,
+        uri2: Uri,
+        uri3: Uri
+    ) = withContext(Dispatchers.IO) {
+        val downloadUrls = mutableListOf<String>()
+        safeCall {
+            val picMain = if (mainImg.toString().isNotEmpty()) {
+                storageRef.child("products")
+                    .putFile(mainImg).await()
+            } else null
+            val pic1 = if (uri1.toString().isNotEmpty()) {
+                storageRef.child("products")
+                    .putFile(uri1).await()
+            } else null
+            val pic2 = if (uri2.toString().isNotEmpty()) {
+                storageRef.child("products")
+                    .putFile(uri2).await()
+            } else null
+            val pic3 = if (uri3.toString().isNotEmpty()) {
+                storageRef.child("products")
+                    .putFile(uri3).await()
+            } else null
+            val mainPicUrl = picMain?.metadata?.reference?.downloadUrl?.await().toString()
+            val Pic1Url = pic1?.metadata?.reference?.downloadUrl?.await().toString()
+            val Pic2Url = pic2?.metadata?.reference?.downloadUrl?.await().toString()
+            val Pic3Url = pic3?.metadata?.reference?.downloadUrl?.await().toString()
+
+            downloadUrls.add(0, mainPicUrl)
+            downloadUrls.add(1, Pic1Url)
+            downloadUrls.add(2, Pic2Url)
+            downloadUrls.add(3, Pic3Url)
+
+            Resource.Success(downloadUrls)
+        }
+    }
+}

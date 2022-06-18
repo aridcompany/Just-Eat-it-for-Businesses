@@ -38,12 +38,13 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_create_products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/add_fill1_wght700_grad0_opsz48"
         app:backgroundTint="@color/accent"
-        app:tint="#FFFFFF"
         app:layout_anchor="@id/bottomAppBar"
+        app:tint="#FFFFFF"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

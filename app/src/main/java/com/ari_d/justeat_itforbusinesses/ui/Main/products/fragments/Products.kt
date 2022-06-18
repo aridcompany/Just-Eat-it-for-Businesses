@@ -1,4 +1,4 @@
-package com.ari_d.justeat_itforbusinesses.ui.Main.products
+package com.ari_d.justeat_itforbusinesses.ui.Main.products.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

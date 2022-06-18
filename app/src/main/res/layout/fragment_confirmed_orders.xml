@@ -36,15 +36,15 @@
                     app:layout_constraintDimensionRatio="207:107"/>
 
                 <TextView
+                    android:id="@+id/txt_confirmed_orders"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txt_confirmed_orders"
-                    android:text="@string/title_confirmed_orders"
-                    android:textSize="23sp"
-                    android:layout_marginTop="68dp"
                     android:layout_marginLeft="37dp"
+                    android:layout_marginTop="58dp"
                     android:fontFamily="@font/montserrat_alternates"
-                    android:textColor="@color/white"/>
+                    android:text="@string/title_total_revenue"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                     android:layout_width="27dp"
                     android:layout_height="27dp"
                     android:layout_alignRight="@id/image_orders_background"
-                    android:layout_marginTop="69dp"
+                    android:layout_marginTop="58dp"
                     android:layout_marginEnd="29dp"
                     android:src="@drawable/more_vert_fill1_wght700_grad0_opsz48_white"
                     app:srcCompat="@drawable/more_vert_fill1_wght700_grad0_opsz48_white" />
