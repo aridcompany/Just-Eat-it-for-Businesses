@@ -2,6 +2,7 @@ package com.ari_d.justeat_itforbusinesses.ui.Main.Repositories
 
 import android.net.Uri
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
+import com.ari_d.justeat_itforbusinesses.data.entities.User
 import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
@@ -11,6 +12,7 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.util.*
 
 class DefaultMainRepository: MainRepository {
 
@@ -26,7 +28,7 @@ class DefaultMainRepository: MainRepository {
 
     override suspend fun createProduct(product: Product) = withContext(Dispatchers.IO) {
         safeCall {
-            products.add(product).await()
+            products.document(product.product_id).set(product).await()
             sellersProducts.add(product)
             Resource.Success(product)
         }
@@ -41,19 +43,19 @@ class DefaultMainRepository: MainRepository {
         val downloadUrls = mutableListOf<String>()
         safeCall {
             val picMain = if (mainImg.toString().isNotEmpty()) {
-                storageRef.child("products")
+                storageRef.child("products/${UUID.randomUUID().toString()}")
                     .putFile(mainImg).await()
             } else null
             val pic1 = if (uri1.toString().isNotEmpty()) {
-                storageRef.child("products")
+                storageRef.child("products/${UUID.randomUUID().toString()}")
                     .putFile(uri1).await()
             } else null
             val pic2 = if (uri2.toString().isNotEmpty()) {
-                storageRef.child("products")
+                storageRef.child("products/${UUID.randomUUID().toString()}")
                     .putFile(uri2).await()
             } else null
             val pic3 = if (uri3.toString().isNotEmpty()) {
-                storageRef.child("products")
+                storageRef.child("products/${UUID.randomUUID().toString()}")
                     .putFile(uri3).await()
             } else null
             val mainPicUrl = picMain?.metadata?.reference?.downloadUrl?.await().toString()
@@ -69,4 +71,13 @@ class DefaultMainRepository: MainRepository {
             Resource.Success(downloadUrls)
         }
     }
+
+    override suspend fun getUser(uid: String) =
+        withContext(Dispatchers.IO) {
+            safeCall {
+                val user = users.document(uid).get().await().toObject(User::class.java)
+                    ?: throw IllegalStateException()
+                Resource.Success(user)
+            }
+        }
 }

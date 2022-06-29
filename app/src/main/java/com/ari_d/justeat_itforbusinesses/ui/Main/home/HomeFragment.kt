@@ -87,6 +87,7 @@ class HomeFragment : Fragment() {
         xAxis.setDrawLabels(true)
         xAxis.granularity = 1f
         xAxis.labelRotationAngle = +90f
+        xAxis.textColor = requireContext().getColor(R.color.black)
 
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART)
         leftAxis.textColor = ColorTemplate.getHoloBlue()
@@ -94,7 +95,7 @@ class HomeFragment : Fragment() {
         leftAxis.axisMinimum = 0f
         leftAxis.axisMaximum = 170f
         leftAxis.yOffset = -9f
-        leftAxis.textColor = requireContext().getColor(R.color.secondaryColor)
+        leftAxis.textColor = requireContext().getColor(R.color.secondaryLightColor)
 
     }
 

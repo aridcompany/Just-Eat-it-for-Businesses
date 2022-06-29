@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:id="@+id/scrollview"
         android:contentDescription="@string/title_scrollview">
 
         <LinearLayout
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:orientation="vertical"
-            android:id="@+id/linear_layout">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="38dp"
-                android:layout_marginTop="55dp"
-                android:textSize="23sp"
-                android:fontFamily="@font/lato"
-                android:textColor="@color/black"
-                android:text="@string/title_new_product"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/lato"
+                    android:text="@string/title_new_product"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/btn_save_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|right"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="38dp"
+                    android:fontFamily="@font/lato"
+                    android:text="@string/title_save_"
+                    android:textColor="@color/red"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="38dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint"
@@ -57,9 +93,9 @@
                     android:layout_height="24dp"
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="8dp"
+                    android:src="@drawable/edit_profile_pic"
                     app:layout_constraintBottom_toBottomOf="@+id/img_profile"
-                    app:layout_constraintEnd_toEndOf="@+id/img_profile"
-                    android:src="@drawable/edit_profile_pic" />
+                    app:layout_constraintEnd_toEndOf="@+id/img_profile" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -68,10 +104,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginTop="14dp"
-                android:textSize="23sp"
                 android:fontFamily="@font/lato"
+                android:text="@string/title_description_images"
                 android:textColor="@color/black"
-                android:text="@string/title_description_images"/>
+                android:textSize="23sp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint2"
@@ -85,45 +121,45 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/title_description_images"
+                    android:src="@drawable/figma_image_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/img_product2"
                     app:layout_constraintHorizontal_bias="0.5"
-                    android:contentDescription="@string/title_description_images"
-                    android:src="@drawable/figma_image_1"
-                    app:srcCompat="@drawable/figma_image_1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/curved_images_for_cart" />
+                    app:shapeAppearanceOverlay="@style/curved_images_for_cart"
+                    app:srcCompat="@drawable/figma_image_1" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/img_product2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/title_description_images"
+                    android:src="@drawable/figma_image_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/img_product3"
                     app:layout_constraintHorizontal_bias="0.5"
-                    android:contentDescription="@string/title_description_images"
-                    android:src="@drawable/figma_image_1"
-                    app:srcCompat="@drawable/figma_image_1"
                     app:layout_constraintStart_toEndOf="@+id/img_product"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/curved_images_for_cart" />
+                    app:shapeAppearanceOverlay="@style/curved_images_for_cart"
+                    app:srcCompat="@drawable/figma_image_1" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/img_product3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
+                    android:contentDescription="@string/title_description_images"
+                    android:src="@drawable/figma_image_1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    android:contentDescription="@string/title_description_images"
-                    android:src="@drawable/figma_image_1"
-                    app:srcCompat="@drawable/figma_image_1"
                     app:layout_constraintStart_toEndOf="@+id/img_product2"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:shapeAppearanceOverlay="@style/curved_images_for_cart" />
+                    app:shapeAppearanceOverlay="@style/curved_images_for_cart"
+                    app:srcCompat="@drawable/figma_image_1" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -132,11 +168,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/alegreya"
                 android:layout_marginTop="19dp"
-                android:text="@string/title_product_details"/>
+                android:fontFamily="@font/alegreya"
+                android:text="@string/title_product_details"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayout_product_name"
@@ -191,6 +227,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:inputType="number|numberDecimal"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -217,8 +254,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:lines="1"
-                    android:maxLines="7"
                     android:maxLength="400"
+                    android:maxLines="7"
                     android:singleLine="true"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
@@ -247,6 +284,7 @@
                     android:layout_height="match_parent"
                     android:lines="1"
                     android:maxLines="1"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
@@ -276,6 +314,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:inputType="number|phone"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -305,13 +344,14 @@
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textColor="#000000"
+                    android:inputType="number|numberDecimal"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/constraint3"
                 android:layout_gravity="center"
                 android:layout_marginTop="26dp">
 
@@ -320,23 +360,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
+                    android:text="@string/title_available"
                     android:textColor="@color/green"
                     android:textSize="19sp"
-                    android:text="@string/title_available"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/dropdown_menu"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:id="@+id/dropdown_menu"
                     android:layout_width="29dp"
                     android:layout_height="29dp"
-                    android:id="@+id/dropdown_menu"
+                    android:src="@drawable/arrow_drop_down_fill0_wght400_grad0_opsz48"
+                    app:layout_constraintBottom_toBottomOf="@id/available"
                     app:layout_constraintLeft_toRightOf="@id/available"
                     app:layout_constraintTop_toTopOf="@id/available"
-                    app:layout_constraintBottom_toBottomOf="@id/available"
-                    android:src="@drawable/arrow_drop_down_fill0_wght400_grad0_opsz48"
-                    app:srcCompat="@drawable/arrow_drop_down_fill0_wght400_grad0_opsz48"/>
+                    app:srcCompat="@drawable/arrow_drop_down_fill0_wght400_grad0_opsz48" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 

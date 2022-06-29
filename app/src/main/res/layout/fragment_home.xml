@@ -56,7 +56,7 @@
                     android:layout_marginTop="49dp"
                     android:fontFamily="@font/lato"
                     android:text="@string/title_24_products"
-                    android:textColor="@color/secondaryColor"
+                    android:textColor="@color/secondaryLightColor"
                     android:textSize="18sp"
                     app:layout_constraintLeft_toLeftOf="@+id/title_layout"
                     app:layout_constraintTop_toTopOf="@+id/title_layout" />
@@ -90,7 +90,7 @@
                     android:layout_marginLeft="9dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/title_product_likes"
-                    android:textColor="@color/secondaryColor"
+                    android:textColor="@color/secondaryLightColor"
                     android:textSize="13sp"
                     app:layout_constraintLeft_toLeftOf="@id/interactions_layout"
                     app:layout_constraintTop_toTopOf="@id/interactions_layout" />
@@ -116,7 +116,7 @@
                     android:layout_marginTop="35dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/title_product_comments"
-                    android:textColor="@color/secondaryColor"
+                    android:textColor="@color/secondaryLightColor"
                     android:textSize="13sp"
                     app:layout_constraintLeft_toLeftOf="@id/interactions_layout"
                     app:layout_constraintTop_toTopOf="@id/interactions_layout" />
@@ -190,12 +190,12 @@
                     android:id="@+id/products_confirmed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="6dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="6dp"
+                    android:fontFamily="@font/lato"
                     android:text="@string/title_product_confirmed"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:fontFamily="@font/lato"
                     app:layout_constraintRight_toRightOf="@id/interactions_layout"
                     app:layout_constraintTop_toBottomOf="@id/product_comments" />
 
@@ -217,44 +217,44 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/secondaryColor"
-                android:text="@string/title_analytics"
-                android:fontFamily="@font/montserrat_alternates"
+                android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:layout_gravity="center"/>
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="@string/title_analytics"
+                android:textColor="@color/secondaryLightColor"
+                android:textSize="16sp" />
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/chart_view"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:layout_marginTop="3dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="10dp" />
 
             <TextView
+                android:id="@+id/highest_sales_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:id="@+id/highest_sales_day"
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="@string/title_highest_sales_day"
-                android:textColor="@color/green"/>
+                android:textColor="@color/green"
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/lowest_sales_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:id="@+id/lowest_sales_day"
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="@string/title_lowest_sales_day"
-                android:textColor="@color/red"/>
+                android:textColor="@color/red"
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 

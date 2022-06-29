@@ -43,7 +43,7 @@
                     android:layout_marginTop="58dp"
                     android:fontFamily="@font/montserrat_alternates"
                     android:text="@string/title_total_revenue"
-                    android:textColor="@color/white"
+                    android:textColor="#FFFFFF"
                     android:textSize="23sp" />
 
                 <TextView
@@ -57,7 +57,7 @@
                     android:layout_below="@+id/txt_confirmed_orders"
                     android:layout_marginLeft="37dp"
                     android:text="@string/title_orders_amount"
-                    android:textColor="@color/white"/>
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/more_options"

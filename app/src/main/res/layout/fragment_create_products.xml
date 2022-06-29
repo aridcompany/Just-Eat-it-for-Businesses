@@ -20,15 +20,50 @@
             android:orientation="vertical"
             android:id="@+id/linear_layout">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="38dp"
-                android:layout_marginTop="55dp"
-                android:textSize="23sp"
-                android:fontFamily="@font/lato"
-                android:textColor="@color/black"
-                android:text="@string/title_new_product"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/lato"
+                    android:text="@string/title_new_product"
+                    android:textColor="@color/black"
+                    android:textSize="23sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/btn_save_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|right"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginEnd="38dp"
+                    android:fontFamily="@font/lato"
+                    android:text="@string/title_save_"
+                    android:textColor="@color/red"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="38dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraint"
@@ -192,6 +227,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:inputType="number|numberDecimal"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -250,6 +286,7 @@
                     android:maxLines="1"
                     android:singleLine="true"
                     android:textColor="#000000"
+                    android:inputType="number"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -277,6 +314,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:inputType="phone|number"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -305,6 +343,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:inputType="number|numberDecimal"
                     android:textColor="#000000"
                     android:textColorHint="#1C1B1B" />
             </com.google.android.material.textfield.TextInputLayout>

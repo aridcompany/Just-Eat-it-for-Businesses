@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ari_d.justeat_itforbusinesses.R
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
+import com.ari_d.justeat_itforbusinesses.data.entities.User
 import com.ari_d.justeat_itforbusinesses.other.Event
 import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.ui.Main.Repositories.MainRepository
@@ -30,6 +31,9 @@ class MainViewModel @Inject constructor(
     private val _uploadProductImagesStatus = MutableLiveData<Event<Resource<MutableList<String>>>>()
     val uploadProductImagesStatus: LiveData<Event<Resource<MutableList<String>>>> =
         _uploadProductImagesStatus
+
+    private val _getUserStatus = MutableLiveData<Event<Resource<User>>>()
+    val getUserStatus: LiveData<Event<Resource<User>>> = _getUserStatus
 
     fun createProduct(product: Product) {
         val error = if (
@@ -74,6 +78,14 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch(dispatcher) {
             val result = repository.uploadProductPictures(mainImg, uri1, uri2, uri3)
             _uploadProductImagesStatus.postValue(Event(result))
+        }
+    }
+
+    fun getUser (uid: String) {
+        _getUserStatus.postValue(Event(Resource.Loading()))
+        viewModelScope.launch (dispatcher){
+            val result = repository.getUser(uid)
+            _getUserStatus.postValue(Event(result))
         }
     }
 }

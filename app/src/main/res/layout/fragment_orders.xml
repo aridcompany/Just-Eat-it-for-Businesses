@@ -45,7 +45,7 @@
                     android:layout_marginTop="58dp"
                     android:layout_marginLeft="37dp"
                     android:fontFamily="@font/montserrat_alternates"
-                    android:textColor="@color/white"/>
+                    android:textColor="#FFFFFF"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                     android:layout_below="@+id/txt_orders"
                     android:layout_marginLeft="37dp"
                     android:text="@string/title_orders_amount"
-                    android:textColor="@color/white"/>
+                    android:textColor="#FFFFFF"/>
 
             </RelativeLayout>
 

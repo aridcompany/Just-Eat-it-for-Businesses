@@ -205,4 +205,6 @@
     <string name="title_fill_out_all_fields">Please fill out all fields.</string>
     <string name="title_please_select_some_product_images">Please select a default product image!</string>
     <string name="title_unavailable_">Unavailable</string>
+    <string name="title_save_"><u>Save</u></string>
+    <string name="title_successfully_uploaded_product">Product uploaded!</string>
 </resources>
