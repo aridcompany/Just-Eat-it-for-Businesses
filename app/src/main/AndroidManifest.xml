@@ -37,14 +37,21 @@
         android:theme="@style/splashScreenTheme" >
         <activity
             android:name=".ui.Main.products.CreateProductsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.Details.Details_Activity"
+            android:exported="true"
+            android:label="@string/title_product_details_"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Auth.Auth_Activity"
             android:exported="true"

@@ -6,15 +6,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.ari_d.justeat_itforbusinesses.R
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
 import com.ari_d.justeat_itforbusinesses.data.entities.User
+import com.ari_d.justeat_itforbusinesses.data.pagingsource.ProductsPagingSource
+import com.ari_d.justeat_itforbusinesses.other.Constants.PAGE_SIZE
 import com.ari_d.justeat_itforbusinesses.other.Event
 import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.ui.Main.Repositories.MainRepository
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -34,6 +42,18 @@ class MainViewModel @Inject constructor(
 
     private val _getUserStatus = MutableLiveData<Event<Resource<User>>>()
     val getUserStatus: LiveData<Event<Resource<User>>> = _getUserStatus
+
+    private val _deleteProductStatus = MutableLiveData<Event<Resource<Unit>>>()
+    val deleteProductStatus: LiveData<Event<Resource<Unit>>> = _deleteProductStatus
+
+    fun getPagingFlow(): Flow<PagingData<Product>> {
+        val pagingSource = ProductsPagingSource(
+            FirebaseFirestore.getInstance(),
+        )
+        return Pager(PagingConfig(PAGE_SIZE)) {
+            pagingSource
+        }.flow.cachedIn(viewModelScope)
+    }
 
     fun createProduct(product: Product) {
         val error = if (
@@ -86,6 +106,14 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch (dispatcher){
             val result = repository.getUser(uid)
             _getUserStatus.postValue(Event(result))
+        }
+    }
+
+    fun deleteProduct(product: Product) {
+        _deleteProductStatus.postValue(Event(Resource.Loading()))
+        viewModelScope.launch (dispatcher) {
+            val result = repository.deleteProduct(product)
+            _deleteProductStatus.postValue(Event(result))
         }
     }
 }

@@ -35,4 +35,66 @@
     <style name="NoBackgroundDialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">@null</item>
     </style>
+
+    <style name="my_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/accent</item>
+    </style>
+
+    <style name="my_button4" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
+    <style name="share_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">16dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="my_button5" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="shimmer_button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/shimmerColor</item>
+    </style>
+
+    <style name="back_arrow" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">4dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primaryColor</item>
+    </style>
+
+    <style name="my_button2" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="my_button3" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="backgroundTint">@color/primaryDarkColor</item>
+    </style>
+
+    <style name="transfer_button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="background">@null</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
+
+    <style name="RatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorControlNormal">@color/primaryLightColor</item>
+        <item name="colorControlActivated">@color/primaryDarkColor</item>
+    </style>
+
 </resources>

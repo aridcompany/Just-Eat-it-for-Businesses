@@ -1,7 +1,7 @@
 package com.ari_d.justeat_itforbusinesses.di
 
 import com.ari_d.justeat_itforbusinesses.ui.Auth.Repositories.AuthReposirory
-import com.ari_d.justeat_itforbusinesses.ui.Auth.Repositories.DefaultAuthRepository
+import com.ari_d.justeat_itforbusinesses.ui.Auth.Repositories.AuthRepositoryImplementation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +14,5 @@ object AuthModule {
 
     @Singleton
     @Provides
-    fun provideAuthRepository() = DefaultAuthRepository() as AuthReposirory
+    fun provideAuthRepository() = AuthRepositoryImplementation() as AuthReposirory
 }

@@ -1,6 +1,6 @@
 package com.ari_d.justeat_itforbusinesses.di
 
-import com.ari_d.justeat_itforbusinesses.ui.Main.Repositories.DefaultMainRepository
+import com.ari_d.justeat_itforbusinesses.ui.Main.Repositories.MainRepositoryImplementation
 import com.ari_d.justeat_itforbusinesses.ui.Main.Repositories.MainRepository
 import dagger.Module
 import dagger.Provides
@@ -14,5 +14,5 @@ object MainModule {
 
     @Singleton
     @Provides
-    fun provideMainRepository() = DefaultMainRepository() as MainRepository
+    fun provideMainRepository() = MainRepositoryImplementation() as MainRepository
 }

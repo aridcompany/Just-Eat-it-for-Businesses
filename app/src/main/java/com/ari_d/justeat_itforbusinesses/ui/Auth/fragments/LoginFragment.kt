@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.ari_d.justeat_itforbusinesses.R
 import com.ari_d.justeat_itforbusinesses.ui.Auth.Auth_Activity
-import com.ari_d.justeat_itforbusinesses.Extensions.slideUpViews
-import com.ari_d.justeat_itforbusinesses.Extensions.snackbar
+import com.ari_d.justeat_itforbusinesses.extensions.slideUpViews
+import com.ari_d.justeat_itforbusinesses.extensions.snackbar
 import com.ari_d.justeat_itforbusinesses.MainActivity
 import com.ari_d.justeat_itforbusinesses.other.EventObserver
 import com.ari_d.justeat_itforbusinesses.ui.Auth.ViewModels.AuthViewModel

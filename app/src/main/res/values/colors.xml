@@ -10,10 +10,17 @@
   <color name="primaryTextColor">#ffffff</color>
   <color name="secondaryTextColor">#ffffff</color>
 
-  <color name="off_white">#FCFBFB</color>
+  <color name="off_white">#FAF9F6</color>
   <color name="red">#FF0000</color>
   <color name="green">#42A342</color>
   <color name="accent">#FF9800</color>
   <color name="white">#FFFFFF</color>
   <color name="black">#000000</color>
+
+  <color name="shimmerColor">#C2C2C2</color>
+  <color name="grey">#808080</color>
+  <color name="transparent">#ebecf0</color>
+  <color name="black_overlay">#66000000</color>
+  <color name="off_white_inverse">#323130</color>
+  <color name="off_white2">#323130</color>
 </resources>

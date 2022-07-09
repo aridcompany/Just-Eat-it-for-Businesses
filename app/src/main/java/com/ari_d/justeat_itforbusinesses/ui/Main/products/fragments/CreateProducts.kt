@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.PopupMenu
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
@@ -16,14 +15,12 @@ import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.ari_d.justeat_itforbusinesses.Extensions.snackbar
+import com.ari_d.justeat_itforbusinesses.extensions.snackbar
 import com.ari_d.justeat_itforbusinesses.R
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
 import com.ari_d.justeat_itforbusinesses.databinding.FragmentCreateProductsBinding
 import com.ari_d.justeat_itforbusinesses.other.EventObserver
 import com.ari_d.justeat_itforbusinesses.ui.Main.ViewModels.MainViewModel
-import com.ari_d.justeat_itforbusinesses.ui.Main.orders.DashboardViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.theartofdev.edmodo.cropper.CropImage
 import dagger.hilt.android.AndroidEntryPoint

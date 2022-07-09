@@ -7,6 +7,7 @@ import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +15,7 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import java.util.*
 
-class DefaultMainRepository: MainRepository {
+class MainRepositoryImplementation: MainRepository {
 
     private val auth = FirebaseAuth.getInstance()
     private val currentUser = auth.currentUser
@@ -26,10 +27,24 @@ class DefaultMainRepository: MainRepository {
         .document(currentUser!!.uid)
         .collection("products")
 
+    override suspend fun getProducts() =
+        withContext(Dispatchers.IO) {
+            safeCall {
+                val result = products.get().await()
+                val products = result.toObjects<Product>().onEach { product ->
+                    currentUser?.let {
+                        product.isAddedToShoppingBag = currentUser.uid in product.shoppingBagList
+                        product.isAddedToFavorites = currentUser.uid in product.favoritesList
+                    }
+                }
+                Resource.Success(products)
+            }
+        }
+
     override suspend fun createProduct(product: Product) = withContext(Dispatchers.IO) {
         safeCall {
             products.document(product.product_id).set(product).await()
-            sellersProducts.add(product)
+            sellersProducts.document(product.product_id).set(product).await()
             Resource.Success(product)
         }
     }
@@ -80,4 +95,12 @@ class DefaultMainRepository: MainRepository {
                 Resource.Success(user)
             }
         }
+
+    override suspend fun deleteProduct(product: Product) = withContext(Dispatchers.IO) {
+        safeCall {
+            sellers.document(product.product_id).delete().await()
+            products.document(product.product_id).delete().await()
+            Resource.Success(Unit)
+        }
+    }
 }

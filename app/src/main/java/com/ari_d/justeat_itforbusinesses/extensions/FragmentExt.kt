@@ -1,4 +1,4 @@
-package com.ari_d.justeat_itforbusinesses.Extensions
+package com.ari_d.justeat_itforbusinesses.extensions
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog

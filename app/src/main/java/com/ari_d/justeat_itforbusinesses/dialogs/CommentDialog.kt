@@ -1,0 +1,140 @@
+package com.ari_d.justeat_itforbusinesses.dialogs
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
+import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
+import androidx.paging.LoadState
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ari_d.justeat_itforbusinesses.extensions.snackbar
+import com.ari_d.justeat_itforbusinesses.R
+import com.ari_d.justeat_itforbusinesses.other.EventObserver
+import com.ari_d.justeat_itforbusinesses.ui.Details.ViewModels.DetailsViewModel
+import com.ari_d.justeatit.Adapters.CommentAdapter
+import com.bumptech.glide.RequestManager
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_comments.*
+import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+@Suppress("EXPERIMENTAL_ANNOTATION_ON_OVERRIDE_WARNING")
+@AndroidEntryPoint
+class CommentDialog : BottomSheetDialogFragment() {
+
+    override fun getTheme() = R.style.NoBackgroundDialogTheme
+    @Inject
+    lateinit var glide: RequestManager
+    @Inject
+    lateinit var commentAdapter: CommentAdapter
+    private val args: CommentDialogArgs by navArgs()
+    private val viewModel: DetailsViewModel by activityViewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_comments, container, false)
+        view.setBackgroundResource(R.drawable.curved_comments_fragment)
+        return view
+    }
+
+    @InternalCoroutinesApi
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        subscribeToObservers()
+        getComments()
+
+        tilComment.setEndIconOnClickListener {
+            val commentText = etComment.text.toString()
+            viewModel.createComment(commentText, args.productId)
+            etComment.text?.clear()
+        }
+
+        commentAdapter.setOnDeleteCommentClickListener { comment, view ->
+            val popupMenu = PopupMenu(requireContext(), view)
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.delete_address -> {
+                        viewModel.deleteComment(comment)
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popupMenu.inflate(R.menu.address_menu)
+            popupMenu.show()
+        }
+    }
+
+    @InternalCoroutinesApi
+    private fun getComments() {
+        lifecycleScope.launch {
+            viewModel.getPagingFlow(args.productId).collect {
+                commentAdapter.submitData(it)
+            }
+        }
+
+        lifecycleScope.launch {
+            commentAdapter.loadStateFlow.collectLatest {
+                if (it.refresh is LoadState.Loading || it.append is LoadState.Loading) {
+                    rvComments.isVisible = true
+                    rvComments2.isVisible = false
+                    commentProgressBar.isVisible = true
+                } else if (it.refresh is LoadState.Error) {
+                    commentProgressBar.isVisible = false
+                    rvComments2.isVisible = true
+                    rvComments.isVisible = false
+                    empty_layout.isVisible = true
+                } else if (it.refresh is LoadState.NotLoading || it.append is LoadState.NotLoading) {
+                    commentProgressBar.isVisible = false
+                    rvComments.isVisible = true
+                    rvComments2.isVisible = false
+                }
+            }
+        }
+    }
+
+    @InternalCoroutinesApi
+    private fun subscribeToObservers() {
+        viewModel.createCommentStatus.observe(viewLifecycleOwner, EventObserver(
+            onError = {
+                commentProgressBar.isVisible = false
+                snackbar(it)
+                tilComment.setEndIconActivated(true)
+            },
+            onLoading = {
+                commentProgressBar.isVisible = true
+                tilComment.setEndIconActivated(false)
+                empty_layout.isVisible = false
+            }
+        ) { comment ->
+            commentProgressBar.isVisible = false
+            tilComment.setEndIconActivated(true)
+            commentAdapter.refresh()
+        })
+        viewModel.deleteCommentStatus.observe(viewLifecycleOwner, EventObserver(
+            onError = {
+                commentProgressBar.isVisible = false
+                snackbar(it)
+            },
+            onLoading = { commentProgressBar.isVisible = true }
+        ) { comment ->
+            commentProgressBar.isVisible = false
+            commentAdapter.refresh()
+        })
+    }
+
+    private fun setupRecyclerView() = rvComments.apply {
+        adapter = commentAdapter
+        layoutManager = LinearLayoutManager(requireContext())
+    }
+}

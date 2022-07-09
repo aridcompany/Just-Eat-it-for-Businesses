@@ -23,5 +23,5 @@
     <item
         android:id="@+id/navigation_products"
         android:icon="@drawable/category_fill0_wght500_grad0_opsz48"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_products" />
 </menu>
