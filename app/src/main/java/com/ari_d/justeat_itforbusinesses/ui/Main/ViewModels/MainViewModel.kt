@@ -87,12 +87,13 @@ class MainViewModel @Inject constructor(
         uri2: Uri,
         uri3: Uri
     ) {
-        val error = if (mainImg.toString().isEmpty()) {
+        val error = if (mainImg.toString().equals("") || uri1.toString().equals("") || uri2.toString().equals("") || uri3.toString().equals("")) {
             applicationContext.getString(R.string.title_please_select_some_product_images)
         } else null
 
         error?.let {
             _uploadProductImagesStatus.postValue(Event(Resource.Error(it)))
+            return
         }
         _uploadProductImagesStatus.postValue(Event(Resource.Loading()))
         viewModelScope.launch(dispatcher) {

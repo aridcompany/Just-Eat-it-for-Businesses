@@ -61,6 +61,7 @@ class Products : Fragment() {
 
         binding.productsRecycler.isVisible = false
         getPosts()
+        subscribeToObservers()
 
         binding.homeSwipe.setOnRefreshListener {
             getPosts()
