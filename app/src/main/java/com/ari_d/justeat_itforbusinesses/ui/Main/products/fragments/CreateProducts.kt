@@ -212,7 +212,8 @@ class CreateProducts : Fragment() {
                     Product(
                         name = binding.TextInputEditTextProductName.text.toString(),
                         description = binding.TextInputEditTextProductDescription.text.toString(),
-                        images = ImageUrls,
+                        images = ImageUrls.subList(0, 4),
+                        filePaths = ImageUrls.subList(4, 8),
                         price = binding.TextInputEditTextProductPrice.text.toString(),
                         product_id = UUID.randomUUID().toString(),
                         seller_id = FirebaseAuth.getInstance().currentUser!!.uid,
@@ -229,7 +230,8 @@ class CreateProducts : Fragment() {
                     Product(
                         name = binding.TextInputEditTextProductName.text.toString(),
                         description = binding.TextInputEditTextProductDescription.text.toString(),
-                        images = ImageUrls,
+                        images = ImageUrls.subList(0, 4),
+                        filePaths = ImageUrls.subList(4, 8),
                         price = binding.TextInputEditTextProductPrice.text.toString(),
                         product_id = UUID.randomUUID().toString(),
                         seller_id = FirebaseAuth.getInstance().currentUser!!.uid,

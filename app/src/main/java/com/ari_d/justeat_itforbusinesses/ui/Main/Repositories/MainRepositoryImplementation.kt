@@ -56,21 +56,25 @@ class MainRepositoryImplementation: MainRepository {
         uri3: Uri
     ) = withContext(Dispatchers.IO) {
         val downloadUrls = mutableListOf<String>()
+        val filePath1 = UUID.randomUUID().toString()
+        val filePath2 = UUID.randomUUID().toString()
+        val filePath3 = UUID.randomUUID().toString()
+        val filePath4 = UUID.randomUUID().toString()
         safeCall {
             val picMain = if (mainImg.toString().isNotEmpty()) {
-                storageRef.child("products/${UUID.randomUUID().toString()}")
+                storageRef.child("products/${filePath1}")
                     .putFile(mainImg).await()
             } else null
             val pic1 = if (uri1.toString().isNotEmpty()) {
-                storageRef.child("products/${UUID.randomUUID().toString()}")
+                storageRef.child("products/${filePath2}")
                     .putFile(uri1).await()
             } else null
             val pic2 = if (uri2.toString().isNotEmpty()) {
-                storageRef.child("products/${UUID.randomUUID().toString()}")
+                storageRef.child("products/${filePath3}")
                     .putFile(uri2).await()
             } else null
             val pic3 = if (uri3.toString().isNotEmpty()) {
-                storageRef.child("products/${UUID.randomUUID().toString()}")
+                storageRef.child("products/${filePath4}")
                     .putFile(uri3).await()
             } else null
             val mainPicUrl = picMain?.metadata?.reference?.downloadUrl?.await().toString()
@@ -82,6 +86,10 @@ class MainRepositoryImplementation: MainRepository {
             downloadUrls.add(1, Pic1Url)
             downloadUrls.add(2, Pic2Url)
             downloadUrls.add(3, Pic3Url)
+            downloadUrls.add(4, filePath1)
+            downloadUrls.add(5, filePath2)
+            downloadUrls.add(6, filePath3)
+            downloadUrls.add(7, filePath4)
 
             Resource.Success(downloadUrls)
         }
@@ -98,6 +106,10 @@ class MainRepositoryImplementation: MainRepository {
 
     override suspend fun deleteProduct(product: Product) = withContext(Dispatchers.IO) {
         safeCall {
+            storageRef.child("products/${product.filePaths[0]}").delete().await()
+            storageRef.child("products/${product.filePaths[1]}").delete().await()
+            storageRef.child("products/${product.filePaths[2]}").delete().await()
+            storageRef.child("products/${product.filePaths[3]}").delete().await()
             sellers.document(product.product_id).delete().await()
             products.document(product.product_id).delete().await()
             Resource.Success(Unit)

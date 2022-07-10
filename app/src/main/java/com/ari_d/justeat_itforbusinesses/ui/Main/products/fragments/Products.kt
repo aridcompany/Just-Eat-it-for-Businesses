@@ -30,7 +30,7 @@ import javax.inject.Inject
 
 @OptIn(InternalCoroutinesApi::class)
 @AndroidEntryPoint
-class Products: Fragment() {
+class Products : Fragment() {
 
     private var _binding: FragmentsProductsBinding? = null
 
@@ -143,18 +143,16 @@ class Products: Fragment() {
     private fun subscribeToObservers() {
         productsViewModel.deleteProductStatus.observe(viewLifecycleOwner, EventObserver(
             onLoading = {
-                binding.shimmerLayout.startShimmer()
-                binding.productsRecycler.isVisible = false
+                binding.progressBar.isVisible = true
             },
             onError = {
                 snackbar(it)
-                binding.shimmerLayout.stopShimmer()
-                binding.productsRecycler.isVisible = true
+                binding.progressBar.isVisible = false
             }
-        ){
-            binding.shimmerLayout.stopShimmer()
-            binding.productsRecycler.isVisible = true
-            productsAdapter.refresh()
+        ) {
+            binding.progressBar.isVisible = true
+            snackbar(getString(R.string.title_product_deleted_sc))
+            getPosts()
         })
     }
 

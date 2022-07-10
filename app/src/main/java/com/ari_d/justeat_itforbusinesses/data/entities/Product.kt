@@ -5,6 +5,7 @@ import com.google.firebase.firestore.Exclude
 data class Product(
     val name : String = "",
     val images : List<String> = listOf(),
+    val filePaths : List<String> = listOf(),
     val price : String = "",
     val description : String = "",
     val product_id : String = "",

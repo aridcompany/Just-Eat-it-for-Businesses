@@ -208,4 +208,5 @@
     <string name="title_save_"><u>Save</u></string>
     <string name="title_successfully_uploaded_product">Product uploaded!</string>
     <string name="title_product_details_">Product Details</string>
+    <string name="title_product_deleted_sc">Product deleted!</string>
 </resources>
