@@ -45,6 +45,12 @@ class DetailsViewModel @Inject constructor(
     private val _commentForProductStatus = MutableLiveData<Event<Resource<List<Comment>>>>()
     val commentForProductStatus: LiveData<Event<Resource<List<Comment>>>> = _commentForProductStatus
 
+    private val _updateProductNoStatus = MutableLiveData<Event<Resource<Unit>>>()
+    val updateProductNoStatus: LiveData<Event<Resource<Unit>>> = _updateProductNoStatus
+
+    private val _updateProductDetailsStatus = MutableLiveData<Event<Resource<Unit>>>()
+    val updateProductDetailsStatus: LiveData<Event<Resource<Unit>>> = _updateProductDetailsStatus
+
     fun getProductDetails(product_id: String) {
         _getProductDetailsStatus.postValue(Event(Resource.Loading()))
         viewModelScope.launch(dispatcher) {
@@ -75,6 +81,22 @@ class DetailsViewModel @Inject constructor(
         viewModelScope.launch (dispatcher){
             val result = repository.deleteComment(comment)
             _deleteCommentStatus.postValue(Event(result))
+        }
+    }
+
+    fun updateProductNo(product_id: String, value: String) {
+        _updateProductNoStatus.postValue(Event(Resource.Loading()))
+        viewModelScope.launch {
+            val result = repository.updateProductNo(product_id, value)
+            _updateProductNoStatus.postValue(Event(result))
+        }
+    }
+
+    fun updateProductDetails(product: Product, productt: Map<String, Any>) {
+        _updateProductDetailsStatus.postValue(Event(Resource.Loading()))
+        viewModelScope.launch {
+            val result = repository.updateProductDetails(product, productt)
+            _updateProductDetailsStatus.postValue(Event(result))
         }
     }
 

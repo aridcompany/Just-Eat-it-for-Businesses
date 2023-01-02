@@ -209,4 +209,6 @@
     <string name="title_successfully_uploaded_product">Product uploaded!</string>
     <string name="title_product_details_">Product Details</string>
     <string name="title_product_deleted_sc">Product deleted!</string>
+    <string name="title_product_updated_successfully">Product updated!</string>
+    <string name="title_confirm">Confirm</string>
 </resources>

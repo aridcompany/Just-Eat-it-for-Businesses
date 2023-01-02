@@ -7,6 +7,7 @@ import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -91,6 +92,60 @@ class DetailsRepositoryImplementation : DetailsRepository {
                 Resource.Success(commentsForProduct)
             }
         }
+
+    override suspend fun updateProductNo(
+        product_id: String,
+        value: String
+    ) = withContext(Dispatchers.IO) {
+        safeCall {
+            if (value.toInt() > 0) {
+                products.document(product_id)
+                    .update(
+                        "stock",
+                        value
+                    )
+                products.document(product_id)
+                    .update(
+                        "available",
+                        true
+                    )
+            } else if (value.toInt() == 0) {
+                products.document(product_id)
+                    .update(
+                        "available",
+                        false
+                    )
+                products.document(product_id)
+                    .update(
+                        "stock",
+                        "0"
+                    )
+            } else if (value.toInt() < 0) {
+                products.document(product_id)
+                    .update(
+                        "available",
+                        false
+                    )
+                products.document(product_id)
+                    .update(
+                        "stock",
+                        "0"
+                    )
+            }
+            Resource.Success(Unit)
+        }
+    }
+
+    override suspend fun updateProductDetails(
+        product: Product,
+        productt: Map<String, Any>
+    ) = withContext(Dispatchers.IO) {
+        safeCall {
+            products.document(product.product_id)
+                .set(productt, SetOptions.merge())
+            Resource.Success(Unit)
+        }
+    }
 
     override suspend fun getUser(uid: String) =
         withContext(Dispatchers.IO) {

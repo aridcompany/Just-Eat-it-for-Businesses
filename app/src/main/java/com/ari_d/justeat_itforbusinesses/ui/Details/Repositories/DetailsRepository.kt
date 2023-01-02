@@ -18,4 +18,9 @@ interface DetailsRepository {
     suspend fun deleteComment(comment: Comment) : Resource<Comment>
 
     suspend fun getCommentForProduct(productId: String) : Resource<List<Comment>>
+
+    suspend fun updateProductNo(product_id: String, value: String) : Resource<Unit>
+
+    suspend fun updateProductDetails(product: Product, productt: Map<String, Any>) : Resource<Unit>
+
 }
