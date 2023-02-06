@@ -1,11 +1,13 @@
 package com.ari_d.justeat_itforbusinesses.ui.Main.Repositories
 
 import android.net.Uri
+import com.ari_d.justeat_itforbusinesses.data.entities.Orders
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
 import com.ari_d.justeat_itforbusinesses.data.entities.User
 import com.ari_d.justeat_itforbusinesses.other.Resource
 import com.ari_d.justeat_itforbusinesses.other.safeCall
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObjects
 import com.google.firebase.ktx.Firebase
@@ -13,9 +15,10 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.text.DateFormat
 import java.util.*
 
-class MainRepositoryImplementation: MainRepository {
+class MainRepositoryImplementation : MainRepository {
 
     private val auth = FirebaseAuth.getInstance()
     private val currentUser = auth.currentUser
@@ -113,6 +116,25 @@ class MainRepositoryImplementation: MainRepository {
             sellers.document(product.product_id).delete().await()
             products.document(product.product_id).delete().await()
             Resource.Success(Unit)
+        }
+    }
+
+    override suspend fun getOrders() = withContext(Dispatchers.IO) {
+        safeCall {
+            val date = DateFormat.getDateInstance().format(Calendar.getInstance().time)
+            val orders = users
+                .document(currentUser!!.uid)
+                .collection("sellers")
+                .document("justeatit")
+                .collection("user's orders")
+                .document("orders")
+                .collection(date)
+                .whereNotEqualTo("status", "Delivered")
+                .orderBy("date", Query.Direction.DESCENDING)
+                .get()
+                .await()
+                .toObjects(Orders::class.java)
+            Resource.Success(orders)
         }
     }
 }

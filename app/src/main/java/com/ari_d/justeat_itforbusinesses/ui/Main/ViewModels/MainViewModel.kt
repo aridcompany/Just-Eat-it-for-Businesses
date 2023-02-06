@@ -11,8 +11,10 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.ari_d.justeat_itforbusinesses.R
+import com.ari_d.justeat_itforbusinesses.data.entities.Orders
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
 import com.ari_d.justeat_itforbusinesses.data.entities.User
+import com.ari_d.justeat_itforbusinesses.data.pagingsource.OrdersPagingSource
 import com.ari_d.justeat_itforbusinesses.data.pagingsource.ProductsPagingSource
 import com.ari_d.justeat_itforbusinesses.other.Constants.PAGE_SIZE
 import com.ari_d.justeat_itforbusinesses.other.Event
@@ -46,8 +48,20 @@ class MainViewModel @Inject constructor(
     private val _deleteProductStatus = MutableLiveData<Event<Resource<Unit>>>()
     val deleteProductStatus: LiveData<Event<Resource<Unit>>> = _deleteProductStatus
 
+    private val _getOrdersStatus = MutableLiveData<Event<Resource<List<Orders>>>>()
+    val getOrdersStatus: LiveData<Event<Resource<List<Orders>>>> = _getOrdersStatus
+
     fun getPagingFlow(): Flow<PagingData<Product>> {
         val pagingSource = ProductsPagingSource(
+            FirebaseFirestore.getInstance(),
+        )
+        return Pager(PagingConfig(PAGE_SIZE)) {
+            pagingSource
+        }.flow.cachedIn(viewModelScope)
+    }
+
+    fun getPagingFlow2(): Flow<PagingData<Orders>> {
+        val pagingSource = OrdersPagingSource(
             FirebaseFirestore.getInstance(),
         )
         return Pager(PagingConfig(PAGE_SIZE)) {
@@ -115,6 +129,14 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch (dispatcher) {
             val result = repository.deleteProduct(product)
             _deleteProductStatus.postValue(Event(result))
+        }
+    }
+
+    fun getOrders() {
+        _getOrdersStatus.postValue(Event(Resource.Loading()))
+        viewModelScope.launch {
+            val result = repository.getOrders()
+            _getOrdersStatus.postValue(Event(result))
         }
     }
 }

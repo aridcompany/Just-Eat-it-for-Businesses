@@ -1,6 +1,7 @@
 package com.ari_d.justeat_itforbusinesses.ui.Main.Repositories
 
 import android.net.Uri
+import com.ari_d.justeat_itforbusinesses.data.entities.Orders
 import com.ari_d.justeat_itforbusinesses.data.entities.Product
 import com.ari_d.justeat_itforbusinesses.data.entities.User
 import com.ari_d.justeat_itforbusinesses.other.Resource
@@ -16,5 +17,7 @@ interface MainRepository {
     suspend fun getUser(uid: String) : Resource<User>
 
     suspend fun deleteProduct(product: Product) : Resource<Unit>
+
+    suspend fun getOrders() : Resource<List<Orders>>
 
 }
